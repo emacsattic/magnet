@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="magnet.el : for Emacs configuration and persistent files" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>magnet.el</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/tarsius/magnet">View on GitHub</a>
+
+          <h1 id="project_title">magnet.el</h1>
+          <h2 id="project_tagline">for Emacs configuration and persistent files</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/tarsius/magnet/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/tarsius/magnet/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <p>The default paths used to store configuration files and persistent
+data are not consistent across Emacs packages.  This isn't just a
+problem with third-party packages but even with built-in packages.</p>
+
+<p>Some packages put these files directly in <code>user-emacs-directory</code> or
+<code>$HOME</code> or in a subdirectory of either of the two or elsewhere.
+Furthermore sometimes file names are used that don't provide any
+insight into what mode might have created them.</p>
+
+<p>This package sets out to fixes this by changing the values of path
+variables to put files in either <code>magnet-etc-directory</code> or
+<code>magnet-var-directory</code>, using subdirectories when appropriate and
+descriptive file names.  In a way this is similar to a color-theme -
+a path-theme if you will.  Except that there is no way to unload it -
+that wouldn't make any sense.</p>
+
+<h1>Status</h1>
+
+<p>This is work in progress and very incomplete at the moment.  Only very
+few packages have been themed so far.  Eventually all built-in and many
+popular third-party packages should be themed.</p>
+
+<p>This is a pre-release.  Version numbers are inspired by how Emacs
+is versioned.  <code>1.1.0</code> will be the first stable version theming an
+acceptable number of packages.</p>
+
+<h1>Contributing</h1>
+
+<p>Please send me pull request with your additions and corrections:
+<a href="https://github.com/tarsius/magnet/pulls">https://github.com/tarsius/magnet/pulls</a></p>
+
+<p>For a list of people who have contributed see:
+<a href="https://github.com/tarsius/magnet/graphs/contributors">https://github.com/tarsius/magnet/graphs/contributors</a></p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">magnet.el maintained by <a href="https://github.com/tarsius">tarsius</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
