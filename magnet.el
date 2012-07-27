@@ -4,7 +4,7 @@
 
 ;; Author: Jonas Bernoulli <jonas@bernoul.li>
 ;; Created: 20120624
-;; Version: 1.0.0
+;; Version: 1.0.1
 ;; Homepage: https://github.com/tarsius/magnet
 ;; Keywords: convenience
 
