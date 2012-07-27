@@ -58,8 +58,8 @@
 ;;    subdirectory.
 ;;
 ;; * `magnet-set-defaults'        (default t)
-;;    Whether magnet sets the default values using `setq-default'.
-;;    When nil use `setq' instead.  This affects whether Customize
+;;    Whether magnet sets the default values using `set-default'.
+;;    When nil use `set' instead.  This affects whether Customize
 ;;    thinks a variable has been customized or not after `magnet' has
 ;;    been loaded.
 ;;
@@ -113,8 +113,8 @@
   "Hopefully the only location where Emacs data files are stored.")
 
 (defvar magnet-set-defaults nil ; FIXME change default
-  "Whether magnet sets the default values using `setq-default'.
-When nil use `setq' instead.")
+  "Whether magnet sets the default values using `set-default'.
+When nil use `set' instead.")
 
 (defvar magnet-add-to-magnetized-custom-groups t
   "Whether modified options are added to a `magnetized' Custom group.")
@@ -134,14 +134,15 @@ Neither SYMBOL nor VALUE is evaluated.  If VALUE isn't a
 string then it *is* evaluated and used as the new value of
 SYMBOL."
   `(progn
-     (,(if magnet-set-defaults 'setq-default 'setq)
-      ,symbol
+     (funcall
+      (if magnet-set-defaults 'set-default 'set)
+      ',symbol
       ,(if (stringp value)
            `(magnet-etc ,value)
          value))
-     ,@(when magnet-add-to-magnetized-custom-groups
-         `((custom-add-to-group 'magnetized-config-files
-                                ',symbol 'custom-variable)))))
+     (when magnet-add-to-magnetized-custom-groups
+       (custom-add-to-group 'magnetized-config-files
+                            ',symbol 'custom-variable))))
 
 (defmacro magnet-var-set (symbol value)
   "Set SYMBOL to VALUE with `magnet-var-directory' prepended.
@@ -149,14 +150,15 @@ Neither SYMBOL nor VALUE is evaluated.  If VALUE isn't a
 string then it *is* evaluated and used as the new value of
 SYMBOL."
   `(progn
-     (,(if magnet-set-defaults 'setq-default 'setq)
-      ,symbol
+     (funcall
+      (if magnet-set-defaults 'set-default 'set)
+      ',symbol
       ,(if (stringp value)
            `(magnet-var ,value)
          value))
-     ,@(when magnet-add-to-magnetized-custom-groups
-         `((custom-add-to-group 'magnetized-persistent-files
-                                ',symbol 'custom-variable)))))
+     (when magnet-add-to-magnetized-custom-groups
+       (custom-add-to-group 'magnetized-persistent-files
+                            ',symbol 'custom-variable))))
 
 (eval-when (eval load)
 
