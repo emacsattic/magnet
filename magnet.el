@@ -100,8 +100,6 @@
 
 ;;; Code:
 
-(require 'cl)
-
 (defvar magnet-etc-directory
   (or (bound-and-true-p epkg-etc-directory)
       (expand-file-name (file-name-as-directory "etc") user-emacs-directory))
@@ -160,8 +158,8 @@ SYMBOL."
        (custom-add-to-group 'magnetized-persistent-files
                             ',symbol 'custom-variable))))
 
-(eval-when (eval load)
-
+(eval-when-compile (require 'cl))
+(eval-when (load eval)
 
 ;;; Built-in.
 
@@ -242,8 +240,8 @@ respective packages."
      (file-exists-p custom-file)
      (load custom-file))
 
-
-) ; eval-when ends here
+) ; magnet-initialize ends here
+
 (provide 'magnet)
 ;; Local Variables:
 ;; fill-column: 90
