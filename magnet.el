@@ -233,12 +233,14 @@ respective packages."
   :group 'magnetized
   :link '(emacs-commentary-link "magnet.el"))
 
+) ; magnet-add-to-magnetized-custom-groups ends here
+
 
 ;;; Load `custom-file'.
 
 (and magnet-load-custom-file
      (file-exists-p custom-file)
-     (load custom-file)))
+     (load custom-file))
 
 
 ) ; eval-when ends here
