@@ -185,6 +185,8 @@ SYMBOL."
 (magnet-var-set recentf-save-file              "recentf.el")
 ;; `savehist'
 (magnet-var-set savehist-file                  "savehist.el")
+;; `saveplace'
+(magnet-var-set save-place-file                "saveplace.el")
 ;; `tramp'
 (magnet-var-set tramp-persistency-file-name    "tramp/history.el")
 ;; The default values of these variables is nil setting them
