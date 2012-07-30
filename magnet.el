@@ -131,13 +131,13 @@ When nil use `set' instead.")
 Neither SYMBOL nor VALUE is evaluated.  If VALUE isn't a
 string then it *is* evaluated and used as the new value of
 SYMBOL."
-  `(progn
-     (funcall
-      (if magnet-set-defaults 'set-default 'set)
-      ',symbol
-      ,(if (stringp value)
-           `(magnet-etc ,value)
-         value))
+  `(prog1
+       (funcall
+        (if magnet-set-defaults 'set-default 'set)
+        ',symbol
+        ,(if (stringp value)
+             `(magnet-etc ,value)
+           value))
      (when magnet-add-to-magnetized-custom-groups
        (custom-add-to-group 'magnetized-config-files
                             ',symbol 'custom-variable))))
@@ -147,13 +147,13 @@ SYMBOL."
 Neither SYMBOL nor VALUE is evaluated.  If VALUE isn't a
 string then it *is* evaluated and used as the new value of
 SYMBOL."
-  `(progn
-     (funcall
-      (if magnet-set-defaults 'set-default 'set)
-      ',symbol
-      ,(if (stringp value)
-           `(magnet-var ,value)
-         value))
+  `(prog1
+       (funcall
+        (if magnet-set-defaults 'set-default 'set)
+        ',symbol
+        ,(if (stringp value)
+             `(magnet-var ,value)
+           value))
      (when magnet-add-to-magnetized-custom-groups
        (custom-add-to-group 'magnetized-persistent-files
                             ',symbol 'custom-variable))))
