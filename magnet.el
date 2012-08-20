@@ -128,9 +128,10 @@ When nil use `set' instead.")
 
 (defmacro magnet-etc-set (symbol value)
   "Set SYMBOL to VALUE with `magnet-etc-directory' prepended.
-Neither SYMBOL nor VALUE is evaluated.  If VALUE isn't a
-string then it *is* evaluated and used as the new value of
-SYMBOL."
+SYMBOL isn't evaluated.  If VALUE is a string expand it at run
+time as a filename in `magnet-etc-directory' and use the result
+as SYMBOL's new value.  If VALUE isn't a string evaluate it at
+compile time; the result is not furthur expanded as a filename."
   `(prog1
        (funcall
         (if magnet-set-defaults 'set-default 'set)
@@ -144,9 +145,10 @@ SYMBOL."
 
 (defmacro magnet-var-set (symbol value)
   "Set SYMBOL to VALUE with `magnet-var-directory' prepended.
-Neither SYMBOL nor VALUE is evaluated.  If VALUE isn't a
-string then it *is* evaluated and used as the new value of
-SYMBOL."
+SYMBOL isn't evaluated.  If VALUE is a string expand it at run
+time as a filename in `magnet-var-directory' and use the result
+as SYMBOL's new value.  If VALUE isn't a string evaluate it at
+compile time; the result is not furthur expanded as a filename."
   `(prog1
        (funcall
         (if magnet-set-defaults 'set-default 'set)
