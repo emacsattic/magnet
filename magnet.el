@@ -110,7 +110,7 @@
       (expand-file-name (file-name-as-directory "var") user-emacs-directory))
   "Hopefully the only location where Emacs data files are stored.")
 
-(defvar magnet-set-defaults nil ; FIXME change default
+(defvar magnet-set-defaults t
   "Whether magnet sets the default values using `set-default'.
 When nil use `set' instead.")
 
