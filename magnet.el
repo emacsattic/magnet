@@ -1,4 +1,4 @@
-;;; magnet.el --- one config and one data directory for Emacs
+;;; magnet.el --- one config and one data directory for Emacs -*- coding: utf-8-unix -*-
 
 ;; Copyright (C) 2012  Jonas Bernoulli
 
