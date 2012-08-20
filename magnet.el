@@ -34,34 +34,34 @@
 ;; Furthermore sometimes file names are used that don't provide any
 ;; insight into what mode might have created them.
 
-;; This package sets out to fixes this by changing the values of path
+;; This package sets out to fix this by changing the values of path
 ;; variables to put files in either `magnet-etc-directory' or
 ;; `magnet-var-directory', using subdirectories when appropriate and
-;; descriptive file names.  In a way this is similar to a color-theme -
-;; a path-theme if you will.  Except that there is no way to unload it -
-;; that wouldn't make any sense.  This package also does not provide any
-;; mode, all work is done when `magnet.el' is loaded and any configuration
-;; has to happen before doing so.
+;; descriptive file names.  In a way this is similar to a color-theme
+;; - a path-theme if you will.  Except that there is no way to unload
+;; it - that wouldn't make any sense.  This package also does not
+;; provide any mode, all work is done when `magnet.el' is loaded and
+;; any configuration has to happen before doing so.
 
-;; One of the variables changed by this package is `custom-file', so we
-;; cannot use Customize for it's configuration .  Instead the following
-;; variables before loading `magnet.el' using `setq'.
+;; One of the variables changed by this package is `custom-file', so
+;; we cannot use Customize to configure `magnet'.  Instead the
+;; following variables before loading `magnet.el' using `setq'.
 
 ;; * `magnet-etc-directory'       (default ~/.emacs.d/etc/)
 ;;    Hopefully the only location where Emacs config files are stored.
-;;    Config files are stored either directly in this directory or in a
-;;    subdirectory.
+;;    Config files are stored either directly in this directory or in
+;;    a subdirectory.
 ;;
 ;; * `magnet-var-directory'       (default ~/.emacs.d/var/)
 ;;    Hopefully the only location where Emacs data files are stored.
-;;    Data files are stored either directly in this directory or in a
-;;    subdirectory.
+;;    Data files are stored either directly in this directory or in
+;;    a subdirectory.
 ;;
 ;; * `magnet-set-defaults'        (default t)
 ;;    Whether magnet sets the default values using `set-default'.
 ;;    When nil use `set' instead.  This affects whether Customize
-;;    thinks a variable has been customized or not after `magnet' has
-;;    been loaded.
+;;    thinks a variable has been customized or not after `magnet'
+;;    has been loaded.
 ;;
 ;; * `magnet-load-custom-file'    (default t)
 ;;    Whether loading `magnet.el' also loads the `custom-file'.
@@ -70,9 +70,9 @@
 
 ;; Status:
 ;;
-;; This is work in progress and very incomplete at the moment.  Only very
-;; few packages have been themed so far.  Eventually all built-in and many
-;; popular third-party packages should be themed.
+;; This is work in progress and very incomplete at the moment.  Only
+;; very few packages have been themed so far.  Eventually all built-in
+;; and many popular third-party packages should be themed.
 ;;
 ;; This is a pre-release.  Version numbers are inspired by how Emacs
 ;; is versioned.  1.1.0 will be the first stable version theming an
@@ -90,7 +90,7 @@
 
 ;; Contributing:
 ;;
-;; Please send me pull request with your additions and corrections:
+;; Please send me pull requests with your additions and corrections:
 ;;
 ;;   https://github.com/tarsius/magnet/pulls
 ;;
@@ -191,7 +191,7 @@ compile time; the result is not furthur expanded as a filename."
 (magnet-var-set save-place-file                "saveplace.el")
 ;; `tramp'
 (magnet-var-set tramp-persistency-file-name    "tramp/history.el")
-;; The default values of these variables is nil setting them
+;; The default values of these variables is nil; setting them
 ;; changes the behaviour of `tramp', so we don't do it.
 ;; (magnet-var-set tramp-auto-save-directory   "tramp/auto-saves/")
 ;; (magnet-var-set tramp-auto-save-directory   backup-directory-alist)
@@ -213,25 +213,25 @@ compile time; the result is not furthur expanded as a filename."
 
 (defgroup magnetized nil
   "Path options whose values were changed by `magnet'.
-These options are define in unrelated packages but have in common that
-they define the location of config and persistend files and directories
-used by their respective packages."
+These options are define in unrelated packages but have in common
+that they define the location of config and persistend files and
+directories used by their respective packages."
   :group 'convenience
   :link '(emacs-commentary-link "magnet.el"))
 
 (defgroup magnetized-config-files nil
   "Path options whose values were changed by `magnet'.
-These options are define in unrelated packages but have in common that
-they define the location of config files and directories used by their
-respective packages."
+These options are define in unrelated packages but have in common
+that they define the location of config files and directories
+used by their respective packages."
   :group 'magnetized
   :link '(emacs-commentary-link "magnet.el"))
 
 (defgroup magnetized-persistent-files nil
   "Path options whose values were changed by `magnet'.
-These options are define in unrelated packages but have in common that
-they define the location of persistent files and directories used by their
-respective packages."
+These options are define in unrelated packages but have in common
+that they define the location of persistent files and directories
+used by their respective packages."
   :group 'magnetized
   :link '(emacs-commentary-link "magnet.el"))
 
@@ -248,7 +248,6 @@ respective packages."
 
 (provide 'magnet)
 ;; Local Variables:
-;; fill-column: 90
 ;; indent-tabs-mode: nil
 ;; End:
 ;;; magnet.el ends here
