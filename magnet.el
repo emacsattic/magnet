@@ -139,9 +139,10 @@ compile time; the result is not furthur expanded as a filename."
         ,(if (stringp value)
              `(magnet-etc ,value)
            value))
-     (when magnet-add-to-magnetized-custom-groups
-       (custom-add-to-group 'magnetized-config-files
-                            ',symbol 'custom-variable))))
+     (and magnet-add-to-magnetized-custom-groups
+          (user-variable-p ',symbol)
+          (custom-add-to-group 'magnetized-config-files
+                               ',symbol 'custom-variable))))
 
 (defmacro magnet-var-set (symbol value)
   "Set SYMBOL to VALUE with `magnet-var-directory' prepended.
@@ -156,9 +157,10 @@ compile time; the result is not furthur expanded as a filename."
         ,(if (stringp value)
              `(magnet-var ,value)
            value))
-     (when magnet-add-to-magnetized-custom-groups
-       (custom-add-to-group 'magnetized-persistent-files
-                            ',symbol 'custom-variable))))
+     (and magnet-add-to-magnetized-custom-groups
+          (user-variable-p ',symbol)
+          (custom-add-to-group 'magnetized-persistent-files
+                               ',symbol 'custom-variable))))
 
 (eval-when-compile (require 'cl))
 (eval-when (load eval)
