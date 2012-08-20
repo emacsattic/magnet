@@ -189,8 +189,9 @@ compile time; the result is not furthur expanded as a filename."
 (magnet-etc-set custom-file                    "custom/custom-file.el")
 (magnet-etc-set custom-theme-directory         "custom/themes/")
 ;; `newsticker'
-(magnet-var-set newsticker-cache-filename      "newsticker/cache") ; TODO .el ?
 (magnet-var-set newsticker-dir                 "newsticker/")
+(magnet-var-set newsticker-cache-filename      "newsticker/cache.el")
+(magnet-var-set newsticker-groups-filename     "newsticker/groups.el")
 ;; `recentf'
 (magnet-var-set recentf-save-file              "recentf.el")
 ;; `savehist'
