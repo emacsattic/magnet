@@ -67,6 +67,10 @@
 ;;    Whether loading `magnet.el' also loads the `custom-file'.
 ;;    One shouldn't set `custom-file' (as loading `magnet.el' does)
 ;;    without ensuring that it is also loaded.
+;;
+;; * `magnet-add-to-magnetized-custom-groups'  (default t)
+;;    Whether loading `magnet.el' adds modified options to a
+;;    `magnetized' Custom group.")
 
 ;; Status:
 ;;
@@ -112,13 +116,15 @@
 
 (defvar magnet-set-defaults t
   "Whether magnet sets the default values using `set-default'.
-When nil use `set' instead.")
-
-(defvar magnet-add-to-magnetized-custom-groups t
-  "Whether modified options are added to a `magnetized' Custom group.")
+When nil use `set' instead.  This affects whether Customize
+thinks a variable has been customized or not after `magnet' has
+been loaded.")
 
 (defvar magnet-load-custom-file t
   "Whether loading `magnet.el' also loads the `custom-file'.")
+
+(defvar magnet-add-to-magnetized-custom-groups t
+  "Whether modified options are added to a `magnetized' Custom group.")
 
 (defun magnet-etc (value)
   (expand-file-name (convert-standard-filename value) magnet-etc-directory))
