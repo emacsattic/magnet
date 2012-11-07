@@ -186,8 +186,8 @@ compile time; the result is not furthur expanded as a filename."
 ;; `bookmark'
 (magnet-var-set bookmark-default-file          "bookmarks/default.el")
 ;; `custom'
-(magnet-etc-set custom-file                    "custom/custom-file.el")
-(magnet-etc-set custom-theme-directory         "custom/themes/")
+(magnet-etc-set custom-file                    "custom-file.el")
+(magnet-etc-set custom-theme-directory         "custom-themes/")
 ;; `newsticker'
 (magnet-var-set newsticker-dir                 "newsticker/")
 (magnet-var-set newsticker-cache-filename      "newsticker/cache.el")
